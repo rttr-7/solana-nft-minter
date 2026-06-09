@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Solana NFT Minter</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 24px;
+        background: #111;
+        color: #f2f2f2;
+      }
+      button {
+        margin: 8px 0;
+        padding: 12px 18px;
+        border: none;
+        border-radius: 8px;
+        background: #00ffa0;
+        color: #111;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      button:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+      .card {
+        background: #1a1a1f;
+        border: 1px solid #2d2d36;
+        border-radius: 16px;
+        padding: 20px;
+        margin-top: 16px;
+      }
+      input,
+      textarea {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0 16px;
+        border-radius: 8px;
+        border: 1px solid #333;
+        background: #0f0f16;
+        color: #eee;
+      }
+      a {
+        color: #60d1ff;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Solana NFT Minter</h1>
+    <p>
+      This example connects to Solana <strong>devnet</strong> and mints a single NFT from
+      your wallet. No paid API or subscription is required.
+    </p>
+
+    <div class="card">
+      <button id="connectButton">Connect Phantom Wallet</button>
+      <button id="requestSolButton" disabled style="margin-left: 8px; background: #4d95ff;">Request 1 SOL (Free)</button>
+      <p id="walletAddress"></p>
+
+      <label for="name">NFT Name</label>
+      <input id="name" placeholder="Example NFT" value="My Devnet NFT" />
+
+      <label for="symbol">NFT Symbol</label>
+      <input id="symbol" placeholder="SYM" value="DEV" />
+
+      <label for="uri">Metadata URI</label>
+      <input id="uri" placeholder="https://example.com/metadata.json" value="https://arweave.net/ExampleMetadataJson" />
+
+      <button id="mintButton" disabled>Mint NFT</button>
+      <pre id="status" style="white-space: pre-wrap; margin-top: 16px;"></pre>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
